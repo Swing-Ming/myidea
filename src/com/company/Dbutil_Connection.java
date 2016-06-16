@@ -1,7 +1,7 @@
 package com.company;
 
 
-import org.junit.*;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,7 +18,6 @@ public class Dbutil_Connection {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:mysql:///library", "root", "123456liming");
-            Assert.assertNotNull(connection);
             return connection;
 
         } catch (SQLException e) {
