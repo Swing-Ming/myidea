@@ -3,5 +3,4 @@
 target/
 *.iml
 .gitignore
-src/
 paging.iml
