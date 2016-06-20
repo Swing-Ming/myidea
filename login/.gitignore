@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+.idea/
+login.iml
+web/WEB-INF/lib
+*.jar
+
+
+out/
+
+
+
