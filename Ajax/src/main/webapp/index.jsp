@@ -35,10 +35,10 @@
             //1 设置引擎
             var xmlhttp1 = creatXMLHttpRequest();
             //2 设置请求方式以及url
-            xmlhttp1.open("get","/home?username="+username,true);
+            xmlhttp1.open("get","/home?username="+encodeURIComponent(username),true);
             //3 回调函数
             xmlhttp1.onreadystatechange = function (){
-                //请求状态码
+                //获取请求状态码
                 var readstate = xmlhttp1.readyState;
 
                 if(readstate == 4){
