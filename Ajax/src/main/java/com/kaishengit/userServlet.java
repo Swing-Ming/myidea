@@ -18,6 +18,7 @@ public class userServlet extends HttpServlet{
 
         out.print("<?xml version = \"1.0\" encoding=\"UTF-8\"?>");
         out.print("<users>");
+        out.print("<user id=\"101\"></user>");
         out.print("<user id = \"101\"><username>tom</username><adress>USA</adress></user>");
         out.print("<user id = \"102\"><username>jim</username><adress>UK</adress></user>");
         out.print("<user id = \"103\"><username>lili</username><adress>China</adress></user>");
