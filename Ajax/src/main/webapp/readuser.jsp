@@ -60,6 +60,8 @@
             document.getElementById("readbtn").onclick = function(){
                  var xmlhttp = cretexmlHttp();
                 xmlhttp.open("get","/user.xml",true);
+//                xmlhttp.open("post","/user.xml",true);post请求
+//                xmlhttp.setRequestHeader("Content-Type","appliction/x-www-form-urlencoded")设置post请求头
                 xmlhttp.onreadystatechange = function(){
                     if(xmlhttp.readyState == 4){
                         if(xmlhttp.status == 200){
@@ -82,7 +84,7 @@
                     }
                 }
 
-                xmlhttp.send();
+//                xmlhttp.send("name=张三&address=中国"); post提交
 
             }
 
