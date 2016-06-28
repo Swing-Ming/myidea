@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace类似于类的完全限定名-->
+<mapper namespace="com.kaishengit.mapper.UserMapper">
+    <!--用xml的方式写sql语句
+        parameterType:方法的传入参数类型；
+        resultType ：方法的返回类型（需要写pojo的完全限定名=包名+类名）
+
+
+    -->
+    <select id="findById" parameterType="int" resultType="User">
+        SELECT * FROM  admin WHERE id = #{id}
+    </select>
+    <select id="findByParam" resultType="User">
+        SELECT * FROM  admin WHERE name=#{param1} and password = #{param2}
+
+    </select>
+
+    <select id="findByQueryParam" parameterType="Map" resultType="User">
+        SELECT * FROM  admin WHERE name = #{name} and password = #{password}
+    </select>
+
+    <select id="finByObj"  resultType="User">
+        SELECT * FROM  admin WHERE name = #{name} and password = #{password}
+    </select>
+
+    <select id="findAll" resultType="User">
+        SELECT * FROM  admin
+    </select>
+    <select id="findByMap" resultType="User">
+        SELECT * FROM  admin
+    </select>
+
+    <update id="update" parameterType="User">
+        UPDATE admin SET name=#{name},password = #{password} WHERE id = #{id}
+    </update>
+
+
+    <insert id="insert" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO admin (name,password) VALUES (#{name},#{password})
+    </insert>
+    <delete id="del"  parameterType="int">
+        DELETE FROM admin WHERE id = #{id}
+    </delete>
+
+</mapper>

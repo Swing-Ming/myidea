@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace类似于类的完全限定名-->
+<mapper namespace="com.kaishengit.mapper.NodeMapper">
+
+<insert id="bathSave" parameterType="list">
+    INSERT INTO admin(name,password) VALUES
+    <foreach collection="list" item="node" separator=",">
+        (#{node.name},#{node.password})
+    </foreach>
+</insert>
+
+</mapper>
