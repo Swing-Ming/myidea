@@ -11,5 +11,15 @@
         (#{node.name},#{node.password})
     </foreach>
 </insert>
+    <delete id="del" parameterType="list">
+        DELETE FROM admin WHERE id IN
+        <foreach collection="list" item="user" separator=","  open="(" close=")">
+            #{user}
+        </foreach>
+    </delete>
+
+    <select id="findAll" resultType="User">
+        SELECT * FROM  admin
+    </select>
 
 </mapper>

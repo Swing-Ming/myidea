@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace类似于类的完全限定名-->
+<mapper namespace="com.kaishengit.mapper.TopicMapper">
+
+    <select id="findById" parameterType="int" resultType="com.kaishengit.pojo.Topic">
+        SELECT t_topic.*,t_user.username AS 'user.name' FROM t_topic
+        inner JOIN t_user on t_topic.userid = t_user.id
+        WHERE t_topic.id = #{id}
+
+
+    </select>
+
+
+</mapper>

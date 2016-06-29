@@ -11,6 +11,8 @@ import java.io.Reader;
 import org.slf4j.Logger;
 
 public class MybaitsUtil {
+
+
     private static SqlSessionFactory sqlSessionFactory = builderSqlSessionFactory();
 
     private static SqlSessionFactory builderSqlSessionFactory() {

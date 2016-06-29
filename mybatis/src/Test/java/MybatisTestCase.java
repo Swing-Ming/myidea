@@ -64,6 +64,7 @@ public class MybatisTestCase {
 //        sqlSession.commit();
 //        sqlSession.close();
     }
+
     @Test
     public void insert(){
         SqlSession sqlSession = MybaitsUtil.getSqlSession();
