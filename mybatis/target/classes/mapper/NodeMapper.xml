@@ -22,4 +22,8 @@
         SELECT * FROM  admin
     </select>
 
+    <select id="findById" parameterType="int" resultType="com.kaishengit.pojo.Node">
+        SELECT * FROM t_node WHERE id = #{id}
+    </select>
+
 </mapper>

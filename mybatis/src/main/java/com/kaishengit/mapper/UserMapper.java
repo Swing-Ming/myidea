@@ -1,5 +1,6 @@
 package com.kaishengit.mapper;
 import com.kaishengit.pojo.User;
+import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

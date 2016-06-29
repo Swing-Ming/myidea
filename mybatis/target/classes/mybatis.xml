@@ -59,6 +59,7 @@
         <mapper resource="mapper/NodeMapper.xml"/>
         <mapper resource="mapper/TopitMapper.xml"/>
         <mapper resource="mapper/TagMapper.xml"/>
+        <mapper resource="mapper/NodeMapper.xml"/>
 
 
 

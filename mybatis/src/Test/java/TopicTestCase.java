@@ -18,4 +18,5 @@ public class TopicTestCase {
         logger.debug("Username:{}",topic.getUser().getName());
     }
 
+
 }

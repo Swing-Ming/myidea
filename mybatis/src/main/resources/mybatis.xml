@@ -54,13 +54,17 @@
 
     </environments>
     <!--加载Mapper文件-->
+    <!--<mappers>-->
+        <!--<mapper resource="mapper/UserMapper.xml"/>-->
+        <!--<mapper resource="mapper/NodeMapper.xml"/>-->
+        <!--<mapper resource="mapper/TopitMapper.xml"/>-->
+        <!--<mapper resource="mapper/TagMapper.xml"/>-->
+        <!--<mapper resource="mapper/NodeMapper.xml"/>-->
+    <!--</mappers>-->
     <mappers>
-        <mapper resource="mapper/UserMapper.xml"/>
-        <mapper resource="mapper/NodeMapper.xml"/>
-        <mapper resource="mapper/TopitMapper.xml"/>
-        <mapper resource="mapper/TagMapper.xml"/>
-
-
+        <mapper class="com.kaishengit.mapper.NodeMapper"/>
+        <mapper class="com.kaishengit.mapper.TagMapper"/>
+        <mapper class="com.kaishengit.mapper.TopicMapper"/>
 
     </mappers>
 

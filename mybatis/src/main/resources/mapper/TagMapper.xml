@@ -14,14 +14,14 @@
     <resultMap id="TagMap" type="com.kaishengit.pojo.T_User">
 
         <id column="id" property="id"/>
-        <result column="username" property="username"/>
-        <result column="password" property="password"/>
-        <result column="email" property="email"/>
-        <result column="avatar" property="avatar"/>
+        <result column="username"   property="username"/>
+        <result column="password"   property="password"/>
+        <result column="email"      property="email"/>
+        <result column="avatar"     property="avatar"/>
         <result column="createtime" property="createtime"/>
-        <result column="loginip" property="loginip"/>
-        <result column="logintime" property="logintime"/>
-        <result column="state" property="state"/>
+        <result column="loginip"    property="loginip"/>
+        <result column="logintime"  property="logintime"/>
+        <result column="state"      property="state"/>
         <collection property="tagList" ofType="com.kaishengit.pojo.Tag">
             <id column="tagid" property="id"/>
             <result column="tagname" property="tagname"/>

@@ -1,7 +1,10 @@
 package com.kaishengit.pojo;
 
-public class Node {
+import java.io.Serializable;
 
+public class Node implements Serializable {
+
+    private static final long serialVersionUID = -2646296217687394620L;
     private Integer id;
 
     private String nodename;

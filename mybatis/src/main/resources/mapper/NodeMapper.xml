@@ -4,8 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace类似于类的完全限定名-->
 <mapper namespace="com.kaishengit.mapper.NodeMapper">
+    <cache eviction="FIFO" readOnly="false" size="2048" flushInterval="60000"/>
 
-<insert id="bathSave" parameterType="list">
+<insert id="bathSave" parameterType="list" flushCache="false">
     INSERT INTO admin(name,password) VALUES
     <foreach collection="list" item="node" separator=",">
         (#{node.name},#{node.password})
@@ -20,6 +21,10 @@
 
     <select id="findAll" resultType="User">
         SELECT * FROM  admin
+    </select>
+
+    <select id="findById" parameterType="int" resultType="com.kaishengit.pojo.Node" useCache="false">
+        SELECT * FROM t_node WHERE id = #{id}
     </select>
 
 </mapper>
