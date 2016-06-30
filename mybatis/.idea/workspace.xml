@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a204f1de-2541-48c6-8244-a10ad5d70623" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Test/java/NodeTestCase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/kaishengit/mapper/NodeMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/kaishengit/mapper/NodeMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/java/TopicTestCase.java" afterPath="$PROJECT_DIR$/src/Test/java/TopicTestCase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kaishengit/mapper/NodeMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/kaishengit/mapper/NodeMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kaishengit/mapper/TagMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/kaishengit/mapper/TagMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kaishengit/mapper/UserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/kaishengit/mapper/UserMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kaishengit/pojo/Node.java" afterPath="$PROJECT_DIR$/src/main/java/com/kaishengit/pojo/Node.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/NodeMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/NodeMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/TagMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TagMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/NodeMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/NodeMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mybatis.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis.xml" />
     </list>
     <ignored path="Ehcache.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -114,13 +103,46 @@
       <file leaf-file-name="NodeMapper.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/NodeMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.043557167">
-              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.3339383">
+              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
               <folding>
-                <marker date="1467192073063" expanded="true" signature="393:432" placeholder="INSERT INTO admin... " />
-                <marker date="1467192073063" expanded="true" signature="607:630" placeholder="DELETE FROM " />
-                <marker date="1467192073063" expanded="true" signature="825:845" placeholder="SELECT * FRO... admin" />
-                <marker date="1467192073063" expanded="true" signature="971:1008" placeholder="SELECT * FRO... forum" />
+                <marker date="1467207581898" expanded="true" signature="394:433" placeholder="INSERT INTO admin... " />
+                <marker date="1467207581898" expanded="true" signature="608:631" placeholder="DELETE FROM " />
+                <marker date="1467207581898" expanded="true" signature="826:846" placeholder="SELECT * FRO... admin" />
+                <marker date="1467207581898" expanded="true" signature="972:1001" placeholder="SELECT * FRO... forum" />
+                <marker date="1467207581898" expanded="true" signature="972:1060" placeholder="SELECT * FRO... t_node" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+              <folding>
+                <marker date="1467186702492" expanded="true" signature="432:469" placeholder="SELECT * FRO... admin" />
+                <marker date="1467186702492" expanded="true" signature="540:606" placeholder="SELECT * FRO... admin" />
+                <marker date="1467186702492" expanded="true" signature="704:772" placeholder="SELECT * FRO... admin" />
+                <marker date="1467186702492" expanded="true" signature="842:910" placeholder="SELECT * FRO... admin" />
+                <marker date="1467186702492" expanded="true" signature="978:998" placeholder="SELECT * FRO... admin" />
+                <marker date="1467186702492" expanded="true" signature="1067:1087" placeholder="SELECT * FRO... admin" />
+                <marker date="1467186702492" expanded="true" signature="1157:1226" placeholder="UPDATE admin... " />
+                <marker date="1467186702492" expanded="true" signature="1338:1400" placeholder="INSERT INTO admin... " />
+                <marker date="1467186702492" expanded="true" signature="1466:1500" placeholder="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <folding>
+                <marker date="1467165181780" expanded="true" signature="343:538" placeholder="SELECT major... major" />
               </folding>
             </state>
           </provider>
@@ -132,7 +154,7 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -173,16 +195,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TopicMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kaishengit/mapper/TopicMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -235,11 +247,11 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b4048f6e-6d67-4729-a4d1-863766c599bf/console.sql" />
         <option value="$PROJECT_DIR$/src/Test/java/NodeTestCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaishengit/pojo/Node.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/NodeMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/TagMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaishengit/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kaishengit/mapper/TagMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/NodeMapper.xml" />
       </list>
     </option>
   </component>
@@ -313,7 +325,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -482,8 +496,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1052,7 +1064,9 @@
       <workItem from="1467104413640" duration="4812000" />
       <workItem from="1467159781030" duration="12619000" />
       <workItem from="1467183429123" duration="10895000" />
-      <workItem from="1467203790822" duration="20000" />
+      <workItem from="1467203790822" duration="616000" />
+      <workItem from="1467205169438" duration="2183000" />
+      <workItem from="1467246331680" duration="128000" />
     </task>
     <servers />
   </component>
@@ -1089,11 +1103,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58865000" />
+    <option name="totallyTimeSpent" value="61772000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1104,7 +1118,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21709532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21709532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25642964" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1157,7 +1171,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1359,26 +1372,26 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/bfcf872e/b4048f6e-6d67-4729-a4d1-863766c599bf/forum.t_topic">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/bfcf872e/b4048f6e-6d67-4729-a4d1-863766c599bf/forum.t_user">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1393,7 +1406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1419,34 +1431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3490909">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding>
-            <marker date="1467165181780" expanded="true" signature="343:538" placeholder="SELECT major... major" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.047272727">
-          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
-          <folding>
-            <marker date="1467186702492" expanded="true" signature="432:469" placeholder="SELECT * FRO... admin" />
-            <marker date="1467186702492" expanded="true" signature="540:606" placeholder="SELECT * FRO... admin" />
-            <marker date="1467186702492" expanded="true" signature="704:772" placeholder="SELECT * FRO... admin" />
-            <marker date="1467186702492" expanded="true" signature="842:910" placeholder="SELECT * FRO... admin" />
-            <marker date="1467186702492" expanded="true" signature="978:998" placeholder="SELECT * FRO... admin" />
-            <marker date="1467186702492" expanded="true" signature="1067:1087" placeholder="SELECT * FRO... admin" />
-            <marker date="1467186702492" expanded="true" signature="1157:1226" placeholder="UPDATE admin... " />
-            <marker date="1467186702492" expanded="true" signature="1338:1400" placeholder="INSERT INTO admin... " />
-            <marker date="1467186702492" expanded="true" signature="1466:1500" placeholder="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Test/java/StudentTestCase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4528302">
@@ -1469,14 +1453,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/bfcf872e/b4048f6e-6d67-4729-a4d1-863766c599bf/forum.t_node">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1507,7 +1491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1532,7 +1515,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1546,14 +1529,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/bfcf872e/b4048f6e-6d67-4729-a4d1-863766c599bf/forum.t_tag">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1598,7 +1581,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1611,15 +1594,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+          <folding>
+            <marker date="1467186702492" expanded="true" signature="432:469" placeholder="SELECT * FRO... admin" />
+            <marker date="1467186702492" expanded="true" signature="540:606" placeholder="SELECT * FRO... admin" />
+            <marker date="1467186702492" expanded="true" signature="704:772" placeholder="SELECT * FRO... admin" />
+            <marker date="1467186702492" expanded="true" signature="842:910" placeholder="SELECT * FRO... admin" />
+            <marker date="1467186702492" expanded="true" signature="978:998" placeholder="SELECT * FRO... admin" />
+            <marker date="1467186702492" expanded="true" signature="1067:1087" placeholder="SELECT * FRO... admin" />
+            <marker date="1467186702492" expanded="true" signature="1157:1226" placeholder="UPDATE admin... " />
+            <marker date="1467186702492" expanded="true" signature="1338:1400" placeholder="INSERT INTO admin... " />
+            <marker date="1467186702492" expanded="true" signature="1466:1500" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <marker date="1467165181780" expanded="true" signature="343:538" placeholder="SELECT major... major" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/NodeMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.043557167">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.3339383">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
           <folding>
-            <marker date="1467192073063" expanded="true" signature="393:432" placeholder="INSERT INTO admin... " />
-            <marker date="1467192073063" expanded="true" signature="607:630" placeholder="DELETE FROM " />
-            <marker date="1467192073063" expanded="true" signature="825:845" placeholder="SELECT * FRO... admin" />
-            <marker date="1467192073063" expanded="true" signature="971:1008" placeholder="SELECT * FRO... forum" />
+            <marker date="1467207581898" expanded="true" signature="394:433" placeholder="INSERT INTO admin... " />
+            <marker date="1467207581898" expanded="true" signature="608:631" placeholder="DELETE FROM " />
+            <marker date="1467207581898" expanded="true" signature="826:846" placeholder="SELECT * FRO... admin" />
+            <marker date="1467207581898" expanded="true" signature="972:1001" placeholder="SELECT * FRO... forum" />
+            <marker date="1467207581898" expanded="true" signature="972:1060" placeholder="SELECT * FRO... t_node" />
           </folding>
         </state>
       </provider>

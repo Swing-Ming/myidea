@@ -6,7 +6,7 @@
 <mapper namespace="com.kaishengit.mapper.NodeMapper">
     <cache eviction="FIFO" readOnly="false" size="2048" flushInterval="60000"/>
 
-<insert id="bathSave" parameterType="list" flushCache="false">
+<insert id="bat`hSave" parameterType="list" flushCache="false">
     INSERT INTO admin(name,password) VALUES
     <foreach collection="list" item="node" separator=",">
         (#{node.name},#{node.password})
@@ -24,7 +24,12 @@
     </select>
 
     <select id="findById" parameterType="int" resultType="com.kaishengit.pojo.Node" useCache="false">
-        SELECT * FROM t_node WHERE id = #{id}
+        SELECT * FROM t_node
+        <where></where>
+        <if test="id != null and id != '' ">
+            id = #{id}
+        </if>
+
     </select>
 
 </mapper>
