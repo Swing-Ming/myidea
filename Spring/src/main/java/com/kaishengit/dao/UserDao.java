@@ -1,26 +1,31 @@
 package com.kaishengit.dao;
 
-public class UserDao {
-    
-    
-    private UserDao userDao;
 
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-    public void init(){
-        System.out.println("init.....");
-    }
-    public void save(){
-        System.out.println("ssssss");
-    }
+import javax.inject.Named;
 
-    public UserDao(){
-        System.out.println("userDao实例化对象");
-    }
+/*@Repository
+@Service
+@Component*/
 
-    public void destoy() {
-        System.out.println("destoy....");
+@Named
+public class UserDao implements UserDa_interface {
+
+
+    public Integer save() {
+        System.out.println("userdao实现接口");
+
+       /* if(1==1){
+            throw new RuntimeException();
+
+        }*/
+        return 10000;
+    }
+    public void run(){
+
+        System.out.println("aaaaaaaaaaaaa");
     }
 }

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="c1199dcc-9703-494f-a1ca-dcfb7439f5e8">
+    <database-info product="MySQL" version="5.7.10-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
+      <schema id="1" name="school"/>
+      <table id="2" parent="1" name="admin"/>
+      <table id="3" parent="1" name="login"/>
+      <table id="4" parent="1" name="major"/>
+      <table id="5" parent="1" name="result"/>
+      <table id="6" parent="1" name="student"/>
+      <table id="7" parent="1" name="subject"/>
+      <routine id="8" parent="1" name="proc_data_result">
+        <routine-kind>PROCEDURE</routine-kind>
+      </routine>
+      <column id="9" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="10" parent="2" name="name">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="11" parent="2" name="pwd">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <index id="12" parent="2" name="UK_ADMIN_NAME">
+        <columns>name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="13" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="14" parent="2" name="UK_ADMIN_NAME">
+        <columns>name</columns>
+        <underlying-index>UK_ADMIN_NAME</underlying-index>
+      </key>
+      <column id="15" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="16" parent="3" name="ip">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="17" parent="3" name="userid">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="18" parent="3" name="creattime">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <key id="19" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="20" parent="4" name="id">
+        <comment>专业编号</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="21" parent="4" name="name">
+        <comment>专业名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <key id="22" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="23" parent="5" name="id">
+        <comment>成绩编号</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="24" parent="5" name="studentno">
+        <comment>考生学号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="25" parent="5" name="subjectid">
+        <comment>科目编号</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="26" parent="5" name="score">
+        <comment>考试成绩</comment>
+        <data-type>float</data-type>
+      </column>
+      <column id="27" parent="5" name="examdate">
+        <comment>成绩修改时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <index id="28" parent="5" name="FK_STUDENT_RESULT">
+        <columns>studentno</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="29" parent="5" name="FK_SUBJECT_RESULT">
+        <columns>subjectid</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="30" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="31" parent="5" name="FK_STUDENT_RESULT">
+        <columns>studentno</columns>
+        <ref-key>~.student.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="32" parent="5" name="FK_SUBJECT_RESULT">
+        <columns>subjectid</columns>
+        <ref-key>~.subject.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="33" parent="6" name="studentno">
+        <comment>学号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="34" parent="6" name="name">
+        <comment>姓名</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="35" parent="6" name="id_card">
+        <comment>身份证号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="36" parent="6" name="sex">
+        <comment>1:男 0:女</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="37" parent="6" name="phone">
+        <comment>电话号码</comment>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="38" parent="6" name="address">
+        <comment>地址</comment>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="39" parent="6" name="email">
+        <comment>邮件地址</comment>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="40" parent="6" name="majorid">
+        <comment>专业编号</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="41" parent="6" name="FK_MAJOR_STUDENT">
+        <columns>majorid</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="42" parent="6" name="UK_STUDENT_ID_CARD">
+        <columns>id_card</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="43" parent="6" name="PRIMARY">
+        <columns>studentno</columns>
+        <primary>1</primary>
+      </key>
+      <key id="44" parent="6" name="UK_STUDENT_ID_CARD">
+        <columns>id_card</columns>
+        <underlying-index>UK_STUDENT_ID_CARD</underlying-index>
+      </key>
+      <foreign-key id="45" parent="6" name="FK_MAJOR_STUDENT">
+        <columns>majorid</columns>
+        <ref-key>~.major.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="46" parent="7" name="id">
+        <comment>科目编号</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="47" parent="7" name="name">
+        <comment>科目名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="48" parent="7" name="classhour">
+        <comment>学时数</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="49" parent="7" name="majorid">
+        <comment>专业编号</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="50" parent="7" name="FK_MAJOR_SUBJECT">
+        <columns>majorid</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="51" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="52" parent="7" name="FK_MAJOR_SUBJECT">
+        <columns>majorid</columns>
+        <ref-key>~.major.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+</component>

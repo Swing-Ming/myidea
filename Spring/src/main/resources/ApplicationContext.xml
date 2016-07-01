@@ -1,24 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+         http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <bean id="userDao" class="com.kaishengit.dao.UserDao" init-method="init" destroy-method="destoy" scope="singleton" lazy-init="true"/>
-    <alias name="userDao" alias="mydao"/>
+       <!-- JDBC-->
 
+    <!--读取confige中的配置文件-->
+    <context:property-placeholder location="classpath:config.properties"/>
 
-    <bean id="user" class="com.kaishengit.dao.User" >
-        <property name="userDao" ref="userDao"/>
+    <!--配置数据源（数据库连接池）-->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
 
     </bean>
 
+   <!-- 创建JDBCTemplate-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+       <!-- <constructor-arg name="dataSource" ref="dataSource"/>-->
+    </bean>
+
+
+    <!--JDBC事务管理器-->
+    <bean id="transationManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource"  ref="dataSource"/>
+    </bean>
+
+    <!--基于注解的事物 @Transaction-->
+    <tx:annotation-driven transaction-manager="transationManager"/>
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--基于注解的Bean管理和DI-->
+    <context:component-scan base-package="com.kaishengit"/>
+
+    <!--基于注解的AOP-->
+    <aop:aspectj-autoproxy/>
+
+    <!--AOP-->
+    <!--将通知类放入容器-->
+   <!-- <bean id="myAdvice" class="com.kaishengit.aop.MyAdvice"/>-->
+
+   <!-- 环绕通知-->
+  <!--  <aop:config>
+        <aop:aspect ref="myAdvice">
+            <aop:pointcut id="mypointcut" expression="execution(* com.kaishengit.dao..*.*(..))"/>
+            <aop:around method="aroundAdvice" pointcut-ref="mypointcut"/>
+        </aop:aspect>
+    </aop:config>-->
+
+    <!--<aop:config>-->
+    <!--    引用通知类对象-->
+        <!--<aop:aspect ref="myAdvice">-->
+           <!-- 定会切入点-->
+         <!--   <aop:pointcut id="mypointcut" expression="execution(* com.kaishengit.dao..*.*(..))"/>
+         -->   <!--加入各种通知-->
+    <!--        <aop:before method="before" pointcut-ref="mypointcut" />
+            <aop:after-returning method="afer_returning" pointcut-ref="mypointcut" returning="name"/>
+            <aop:after-throwing method="exception" pointcut-ref="mypointcut" throwing="e"/>
+            <aop:after method="afer" pointcut-ref="mypointcut"/>
+        </aop:aspect>
+    </aop:config> -->
+
+
+
+    <!--
+        将userDao对象放入spring容器中，对userDao取别名，修改初始化，销毁，是否为单利模式，以及延时加载属性
+    -->
+    <!--  <bean id="userDao" class="com.kaishengit.dao.UserDao" init-method="init" destroy-method="destoy" scope="singleton" lazy-init="true"/>
+      <alias name="userDao" alias="mydao"/>-->
+
+
+   <!-- <bean id="userDaoX" class="com.kaishengit.dao.UserDao"/>-->
+    <!--<bean id="userDao1" class="com.kaishengit.dao.UserDao1"/>-->
+
+    <!--自动注入-->
+   <!-- <bean id="userservice" class="com.kaishengit.service.Userservice" autowire="byName"/>
+-->
+
+
+    <!--构造方法注入 根据参数-->
+     <!--<bean id="userservice" class="com.kaishengit.service.Userservice">
+           <constructor-arg type="com.kaishengit.dao.UserDa_interface" ref="userDao"/>
+         <constructor-arg type="com.kaishengit.dao.UserDa_interface" ref="userDao1"/>
+     </bean>-->
+
+
+    <!--构造方法注入 根据下标 index-->
+
+   <!-- <bean id="userservice" class="com.kaishengit.service.Userservice">
+        <constructor-arg index="0" ref="userDao"/>
+        <constructor-arg index="1" ref="userDao1"/>
+    </bean>-->
+
+
+    <!--构造方法注入 根据name-->
+<!--
+    <bean id="userservice" class="com.kaishengit.service.Userservice">
+        <constructor-arg name="userDa_interface" ref="userDao1"/>
+        <constructor-arg name="userDa_interface1" ref="userDao"/>
+        &lt;!&ndash;<constructor-arg index="1" ref="userDao1"/>&ndash;&gt;
+
+
+    </bean>-->
+
+
+
+
+    <!--IOC,DI通过set注入-->
+    <!--  <bean id="userservice" class="com.kaishengit.service.Userservice">
+          <property name="userDaoX" ref="userDao"/>
+      </bean>-->
+
+
+    <!--一些常用的set注入写法-->
+    <!-- <bean id="bookservice" class="com.kaishengit.service.Bookservice" p:bookName="shuhu" p:num="10000">
+        <property name="lists">
+            <list>
+                 <value>list1</value>
+                <value>list1</value>
+                <value>list1</value>
+            </list>
+        </property>
+         <property name="sets">
+             <set>
+                 <value>set1</value>
+                 <value>set2</value>
+             </set>
+         </property>
+         <property name="maps">
+             <map>
+                 <entry key="k" value="1"/>
+                 <entry key="k1" value="2"/>
+             </map>
+         </property>
+         <property name="properties">
+             <props>
+                 <prop key="s">v1</prop>
+                 <prop key="s1">v2</prop>
+             </props>
+         </property>
+         <property name="userDa_interface" ref="userDao"/>
+     </bean>
+     -->
+
+    <!--  <bean id="bookservice" class="com.kaishengit.service.Bookservice" >
+          <property name="userDa_interface">
+              <ref bean="userDao"></ref>
+          </property>
+      </bean>-->
+
+    <!--<bean id="bookservice" class="com.kaishengit.service.Bookservice">
+        <property name="userDa_interface">
+            <bean class="com.kaishengit.dao.UserDao"/>
+        </property>
+    </bean>-->
 
 
 </beans>
