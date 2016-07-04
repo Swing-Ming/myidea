@@ -9,9 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.management.RuntimeErrorException;
 
 @Named
-@Transactional
+@Transactional(noRollbackFor = RuntimeErrorException.class)
 public class LoginService {
 
 

@@ -15,7 +15,7 @@ import java.awt.print.Book;
 public class SpringTestCase {
 
     Logger logger = LoggerFactory.getLogger(SpringTestCase.class);
-
+    
     @Test
     public void userDaoTestCase(){
         ApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");

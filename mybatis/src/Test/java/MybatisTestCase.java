@@ -34,7 +34,7 @@ public class MybatisTestCase {
         SqlSession sqlSession =MybaitsUtil.getSqlSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         User user = userMapper.findById(8);
-//        User user = sqlSession.selectOne("com.kaishengit.mapper.UserMapper.findById", 8);
+//       User user = sqlSession.insert("com.kaishengit.mapper.UserMapper.findById", 8);
         logger.debug("{}", user);
 
         sqlSession.close();

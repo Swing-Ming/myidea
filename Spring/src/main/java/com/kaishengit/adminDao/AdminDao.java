@@ -3,7 +3,6 @@ package com.kaishengit.adminDao;
 import com.kaishengit.pojo.Admin;
 
 import java.util.List;
-
 public interface AdminDao {
 
     void save(Admin admin);

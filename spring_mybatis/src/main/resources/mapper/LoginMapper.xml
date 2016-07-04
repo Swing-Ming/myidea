@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kaishengit.mapper.LoginMapper">
+
+
+
+
+    <insert id="save" parameterType="User">
+        INSERT  into login (ip,userid) value (?,?)
+    </insert>
+
+   <!-- <select id="findById" parameterType="int"  resultType="User">
+
+        SELECT * FROM admin  WHERE id = #{id}
+
+    </select>-->
+<!--
+<select id="findByUserId" parameterType="int" resultType="LoginLog">
+    SELECT * FROM t_login_log WHERE userid = #{userId}
+</select>-->
+
+</mapper>
