@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [05/Jul/2016:08:31:24 +0800] "GET /users/checkuser.json HTTP/1.1" 406 1067 http-bio-80-exec-1 57
+0:0:0:0:0:0:0:1 - - [05/Jul/2016:08:31:24 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-80-exec-2 5
