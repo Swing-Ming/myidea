@@ -15,6 +15,8 @@
         <h3>图书列表</h3>
     </div>
 </div>
+
+<a href="/books/new" class="btn btn-success">添加书籍</a>
 <table class="table">
     <thead>
     <tr>
