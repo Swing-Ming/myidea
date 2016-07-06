@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!--自动扫描&基于注解的bean以及DI-->
     <context:component-scan base-package="com.kaishengit">
@@ -31,7 +36,7 @@
         <!--将pojo中的所有类声明别名为类的名字-->
         <property name="typeAliasesPackage" value="com.kaishengit.pojo"/>
         <!--自动加载classpath中的mapper文件中的所有xml文件-->
-     <!--   <property name="mapperLocations" value="classpath:mapper/*.xml"/>-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
 
     <!--自动扫描mapper，告诉mybatis mapper接口的位置 将所有的mapper放入spring容器中-->
