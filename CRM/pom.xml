@@ -100,6 +100,15 @@
       <version>4.2.6.RELEASE</version>
     </dependency>
 
+   <!-- shiro-->
+    <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-all -->
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-all</artifactId>
+      <version>1.2.4</version>
+    </dependency>
+
+
     <!--other-->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>

@@ -1,4 +1,10 @@
-com\kaishengit\controller\WebpageController.class
-com\kaishengit\util\Strings.class
+com\kaishengit\pojo\Role.class
+com\kaishengit\pojo\UserLog.class
+com\kaishengit\service\UserService.class
 com\kaishengit\util\Page.class
+com\kaishengit\service\ShiroRealname.class
+com\kaishengit\mapper\UserMapper.class
 com\kaishengit\exception\NotFoundException.class
+com\kaishengit\controller\WebpageController.class
+com\kaishengit\pojo\User.class
+com\kaishengit\util\Strings.class
