@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace类似于类的完全限定名-->
+<mapper namespace="com.kaishengit.mapper.BookMapper">
+
+
+    <insert id="save" parameterType="Book">
+        INSERT  INTO t_book (bookname, bookprice, bookauthor, booknum, typeid, pubid, bookpic)
+        VALUES (#{bookname},#{bookprice},#{bookauthor},#{booknum},#{typeid},#{pubid},'' )
+    </insert>
+
+    <select id="findById" parameterType="Integer" resultType="Book">
+        SELECT * FROM t_book WHERE  id = #{id}
+    </select>
+
+    <select id="findAll" resultType="Book">
+        SELECT t_book.*,t_booktype.id as 'booktype.id',
+        t_publisher.id as 'publisher.id',
+         t_booktype.booktype as 'booktype.booktype',
+        t_publisher.pubname as 'publisher.pubname'
+        FROM t_book
+        INNER JOIN t_booktype on  t_book.typeid = t_booktype.id
+        INNER JOIN t_publisher on  t_book.pubid = t_publisher.id
+        ORDER BY t_book.id DESC
+    </select>
+
+    <delete id="del" parameterType="Integer">
+        DELETE FROM t_book WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="Book">
+        UPDATE t_book SET bookname=#{bookname},bookauthor=#{bookauthor},booknum=#{booknum},
+        typeid=#{typeid},pubid=#{pubid},bookprice=#{bookprice}
+        where id = #{id}
+    </update>
+
+    <select id="count" resultType="long">
+       SELECT count(*) from t_book
+    </select>
+
+    <!--分页-->
+    <select id="findByPage" resultType="Book">
+        SELECT t_book.*,t_booktype.id as 'booktype.id',
+        t_publisher.id as 'publisher.id',
+         t_booktype.booktype as 'booktype.booktype',
+        t_publisher.pubname as 'publisher.pubname'
+        FROM t_book
+        INNER JOIN t_booktype on  t_book.typeid = t_booktype.id
+        INNER JOIN t_publisher on  t_book.pubid = t_publisher.id
+         ORDER by t_book.id DESC
+        limit ${start},${size}
+    </select>
+
+
+
+
+</mapper>

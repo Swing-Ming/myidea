@@ -1,0 +1,9 @@
+com\kaishengit\mapper\BookTypeMapper.class
+com\kaishengit\mapper\BookMapper.class
+com\kaishengit\pojo\Publisher.class
+com\kaishengit\util\Page.class
+com\kaishengit\pojo\BookType.class
+com\kaishengit\controller\BookController.class
+com\kaishengit\service\BookService.class
+com\kaishengit\mapper\BookPubMapper.class
+com\kaishengit\pojo\Book.class

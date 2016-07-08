@@ -1,7 +1,0 @@
-0:0:0:0:0:0:0:1 - - [06/Jul/2016:17:18:22 +0800] "GET /books HTTP/1.1" 200 5746 http-bio-80-exec-1 2667
-0:0:0:0:0:0:0:1 - - [06/Jul/2016:17:18:22 +0800] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 - http-bio-80-exec-2 17
-0:0:0:0:0:0:0:1 - - [06/Jul/2016:17:18:22 +0800] "GET /static/js/jquery-1.11.3.min.js HTTP/1.1" 304 - http-bio-80-exec-3 13
-0:0:0:0:0:0:0:1 - - [06/Jul/2016:17:18:22 +0800] "GET /static/js/jquery.twbsPagination.min.js HTTP/1.1" 304 - http-bio-80-exec-4 13
-0:0:0:0:0:0:0:1 - - [06/Jul/2016:17:18:23 +0800] "GET /books/new HTTP/1.1" 200 3394 http-bio-80-exec-6 196
-0:0:0:0:0:0:0:1 - - [06/Jul/2016:17:18:58 +0800] "POST /books/new HTTP/1.1" 302 - http-bio-80-exec-8 24517
-0:0:0:0:0:0:0:1 - - [06/Jul/2016:17:18:58 +0800] "GET /books HTTP/1.1" 200 6125 http-bio-80-exec-9 33

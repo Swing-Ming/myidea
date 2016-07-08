@@ -31,10 +31,66 @@
     </delete>
 
     <update id="update" parameterType="Book">
-        UPDATE t_book SET bookname=#{bookname} ,bookauthor=#{bookauthor},booknum=#{booknum},
+        UPDATE t_book SET bookname=#{bookname},bookauthor=#{bookauthor},booknum=#{booknum},
         typeid=#{typeid},pubid=#{pubid},bookprice=#{bookprice}
         where id = #{id}
     </update>
+
+    <select id="count" resultType="long">
+       SELECT count(*) from t_book
+    </select>
+
+    <!--分页-->
+    <select id="findByPage" resultType="Book">
+        SELECT t_book.*,t_booktype.id as 'booktype.id',
+        t_publisher.id as 'publisher.id',
+         t_booktype.booktype as 'booktype.booktype',
+        t_publisher.pubname as 'publisher.pubname'
+        FROM t_book
+        INNER JOIN t_booktype on  t_book.typeid = t_booktype.id
+        INNER JOIN t_publisher on  t_book.pubid = t_publisher.id
+         ORDER by t_book.id DESC
+        limit ${start},${size}
+    </select>
+
+    <select id="countByParam" resultType="long">
+        SELECT count(*) from t_book
+        <where>
+            <if test="bookname != null and bookname != '' " >
+                bookname LIKE  concat ('%',#{bookname},'%')
+            </if>
+            <if test="type != null and type != ''">
+                and typeid = #{type}
+            </if>
+            <if test="pub != null and pub !='' ">
+                and pubid = #{pub}
+            </if>
+        </where>
+    </select>
+    
+    <select id="findByParam" resultType="Book">
+        SELECT t_book.*,t_booktype.id as 'booktype.id',
+        t_publisher.id as 'publisher.id',
+         t_booktype.booktype as 'booktype.booktype',
+        t_publisher.pubname as 'publisher.pubname'
+        FROM t_book
+        INNER JOIN t_booktype on  t_book.typeid = t_booktype.id
+        INNER JOIN t_publisher on  t_book.pubid = t_publisher.id
+
+        <where>
+            <if test="bookname != null and bookname != '' " >
+                bookname LIKE  concat ('%' ,#{bookname},'%')
+            </if>
+            <if test="type != null and type != ''">
+                and typeid = #{type}
+            </if>
+            <if test="pub != null and pub !='' ">
+                and pubid = #{pub}
+            </if>
+        </where>
+        ORDER by t_book.id DESC
+        limit ${start},${size}
+    </select>
 
 
 
