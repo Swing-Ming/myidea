@@ -51,12 +51,12 @@
         <comment>真实姓名</comment>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="15" parent="3" name="t_role_id">
+      <column id="15" parent="3" name="roleid">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
       <index id="16" parent="3" name="fk_t_user_t_role1_idx">
-        <columns>t_role_id</columns>
+        <columns>roleid</columns>
         <desc-columns></desc-columns>
       </index>
       <key id="17" parent="3" name="PRIMARY">
@@ -64,7 +64,7 @@
         <primary>1</primary>
       </key>
       <foreign-key id="18" parent="3" name="fk_t_user_t_role1">
-        <columns>t_role_id</columns>
+        <columns>roleid</columns>
         <ref-key>~.t_role.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>

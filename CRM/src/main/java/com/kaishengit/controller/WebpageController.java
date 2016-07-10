@@ -1,5 +1,6 @@
 package com.kaishengit.controller;
 
+import com.kaishengit.dto.FlashMessage;
 import com.kaishengit.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -40,14 +41,22 @@ public class WebpageController {
         }catch (AuthenticationException e){
           /*  e.printStackTrace();
             System.out.println("登陆错误");*/
-            redirectAttributes.addFlashAttribute("message","账号或密码错误");
-            return "redirect:/home";
+            redirectAttributes.addFlashAttribute("message",new FlashMessage(FlashMessage.STATE_ERROR,"账号或密码错误"));
+            return "redirect:/";
         }
     }
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String login(){
         return "login";
+    }
+
+    @RequestMapping(value = "/logout" ,method = RequestMethod.GET)
+    public String logout(RedirectAttributes redirectAttributes){
+
+        SecurityUtils.getSubject().logout();
+        redirectAttributes.addFlashAttribute("message",new FlashMessage("你已安全退出"));
+        return "redirect:/";
     }
 
 }

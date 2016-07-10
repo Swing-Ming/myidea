@@ -26,71 +26,79 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body  background="/static/img/photo.jpg" >
+<body background="/static/img/photo.jpg">
 <%--<div style="position:relative; width:100%; height:100% ; float: none">
     <img src="/static/img/photo.jpg" height="100%" width="100%"/>
 </div>--%>
 <div class="login-box">
-    <div class="login-logo" >
+    <div class="login-logo">
         <a href="#" style="color: white"><b>Init</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
         <c:if test="${not empty message}">
-            <div class="alert alert-danger">
-                ${message}
-            </div>
-        </c:if>
-
-        <form action="/" method="post">
-            <div class="form-group has-feedback">
-                <input type="text" class="form-control" name="username" placeholder="账号"/>
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <input type="password" class="form-control" name="password" placeholder="密码"/>
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
-            <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox"/> 记住我
-                        </label>
+            <c:choose>
+                <c:when test="${message.state == 'success'}">
+                    <div class="alert alert-success">
+                        ${message.message}
                     </div>
+                </c:when>
+                <c:otherwise>
+                     <div class="alert alert-danger">
+                        ${message}
+                     </div>
+                </c:otherwise>
+            </c:choose>
+        </c:if>
+            <form action="/" method="post">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" name="username" placeholder="账号"/>
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
-                <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" name="password" placeholder="密码"/>
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
-                <!-- /.col -->
-            </div>
-        </form>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox"/> 记住我
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
 
-        <!-- /.social-auth-links -->
+            <!-- /.social-auth-links -->
 
-        <a href="#">忘记密码</a><br/>
-        <a href="#" class="text-center">注册账号</a>
+            <a href="#">忘记密码</a><br/>
+            <a href="#" class="text-center">注册账号</a>
 
+        </div>
+        <!-- /.login-box-body -->
     </div>
-    <!-- /.login-box-body -->
-</div>
-<!-- /.login-box -->
+    <!-- /.login-box -->
 
-<!-- jQuery 2.2.3 -->
-<script src="/static/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="/static/bootstrap/js/bootstrap.min.js"></script>
-<!-- iCheck -->
-<script src="/static/plugins/iCheck/icheck.min.js"></script>
-<script>
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' // optional
+    <!-- jQuery 2.2.3 -->
+    <script src="/static/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="/static/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' // optional
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
