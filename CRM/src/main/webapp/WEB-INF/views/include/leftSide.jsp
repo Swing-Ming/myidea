@@ -10,15 +10,16 @@
             <%--  <li class="header">客户关系管理系统</li>--%>
             <!-- Optionally, you can add icons to the links -->
             <shiro:hasAnyRoles name="经理,员工">
-                <li class="active"><a href="#"><i class="fa fa-home"></i> <span>首页</span></a></li>
-                <li class="active"><a href="#"><i class="fa fa-bullhorn"></i> <span>公告</span></a></li>
-                <li class="active"><a href="#"><i class="fa fa-building-o"></i> <span>项目管理</span></a></li>
-                <li class="active"><a href="#"><i class="fa fa-users"></i> <span>客户管理</span></a></li>
-                <li class="active"><a href="#"><i class="fa fa-bar-chart"></i> <span>统计</span></a></li>
-                <li class="active"><a href="#"><i class="fa fa-calendar-check-o"></i> <span>待办事项</span></a></li>
-                <li class="active"><a href="#"><i class="fa fa-file-text"></i> <span>文档管理</span></a></li>
+                <li class="${param.menu == 'home'?'active':''}"><a href="/home"><i class="fa fa-home"></i> <span>首页</span></a></li>
+                <li class="${param.menu == 'notice'?'active':''}"><a href="/notice"><i class="fa fa-bullhorn"></i> <span>公告</span></a></li>
+                <li><a href="#"><i class="fa fa-building-o"></i> <span>项目管理</span></a></li>
+                <li><a href="#"><i class="fa fa-users"></i> <span>客户管理</span></a></li>
+                <li><a href="#"><i class="fa fa-bar-chart"></i> <span>统计</span></a></li>
+                <li><a href="#"><i class="fa fa-calendar-check-o"></i> <span>待办事项</span></a></li>
+                <li><a href="#"><i class="fa fa-file-text"></i> <span>文档管理</span></a></li>
             </shiro:hasAnyRoles>
-                <shiro:hasRole name="管理员"/>
+
+            <shiro:hasRole name="管理员">
             <li class="treeview">
                 <a href="#"><i class="fa fa-cogs"></i> <span>系统管理</span>
             <span class="pull-right-container">
@@ -31,6 +32,7 @@
                 </ul>
             </li>
         </ul>
+        </shiro:hasRole>
         <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

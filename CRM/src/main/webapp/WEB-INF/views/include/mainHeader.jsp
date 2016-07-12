@@ -8,7 +8,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">项目</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg">首页</span>
+        <span class="logo-lg">CRM</span>
     </a>
 
     <!-- Header Navbar -->

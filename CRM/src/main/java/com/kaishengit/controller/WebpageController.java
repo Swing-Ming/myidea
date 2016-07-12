@@ -5,6 +5,7 @@ import com.kaishengit.service.UserService;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
@@ -39,7 +40,10 @@ public class WebpageController {
             UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, DigestUtils.md5Hex(password));
             subject.login(usernamePasswordToken);
             return "redirect:/home";
-        }catch (AuthenticationException e){
+        }catch (LockedAccountException ex){
+            redirectAttributes.addFlashAttribute("message",new FlashMessage(FlashMessage.STATE_ERROR,"用户已被禁用"));
+            return "redirect:/";
+        } catch (AuthenticationException e){
           /*  e.printStackTrace();
             System.out.println("登陆错误");*/
             redirectAttributes.addFlashAttribute("message",new FlashMessage(FlashMessage.STATE_ERROR,"账号或密码错误"));
