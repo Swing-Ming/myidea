@@ -45,14 +45,14 @@
                 </c:when>
                 <c:otherwise>
                      <div class="alert alert-danger">
-                        ${message}
+                        ${message.message}
                      </div>
                 </c:otherwise>
             </c:choose>
         </c:if>
             <form action="/" method="post">
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" name="username" placeholder="账号"/>
+                    <input type="text" class="form-control" autofocus name="username" placeholder="账号"/>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">

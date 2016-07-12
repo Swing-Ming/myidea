@@ -10,7 +10,7 @@
       <schema id="1" name="mydb"/>
       <table id="2" parent="1" name="t_role"/>
       <table id="3" parent="1" name="t_user"/>
-      <table id="4" parent="1" name="t_userlog"/>
+      <table id="4" parent="1" name="t_user_log"/>
       <column id="5" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>

@@ -1,14 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>xxxx</title>
+    <title>用户登录日志</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -34,14 +30,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-    <%@include file="/include/mainHeader.jsp" %>
-    <%@include file="/include/leftSide.jsp" %>
+    <%@include file="../include/mainHeader.jsp" %>
+    <%@include file="../include/leftSide.jsp" %>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content">
-
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">登录日志列表</h3>
+                        </div>
+                        <div class="box-body">
+                            <table class="table table-bordered table-hover" id="logTable">
+                                <thead>
+                                <tr>
+                                    <th>登录时间</th>
+                                    <th>登录IP</th>
+                                </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </section>
         <!-- /.content -->
@@ -60,8 +75,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="/static/dist/js/app.min.js"></script>
 <script src="/static/plugins/validate/jquery.validate.min.js"></script>
+<script src="/static/plugins/datatables/js/dataTables.bootstrap.min.js"></script>
+
+<script>
+
+    $(function(){
 
 
 
+    });
+</script>
 </body>
 </html>

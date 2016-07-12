@@ -66,12 +66,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
             </div>
 
-    </div>
-
-
-    </section>
+        </section>
     <!-- /.content -->
-</div>
+    </div>
 <!-- /.content-wrapper -->
 <div class="control-sidebar-bg"></div>
 </div>
@@ -85,11 +82,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="/static/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/static/dist/js/app.min.js"></script>
-<script src="/static/plugins/validate"></script>
+<script src="/static/plugins/validate/jquery.validate.min.js"></script>
 <script>
     $(function () {
         $("#changePasswordForm").validate({
-            errorClass: "texr-danger",
+            errorClass: "text-danger",
             errorElement: "span",
             rules: {
                 oldpassword: {
@@ -98,11 +95,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 },
                 newpassword: {
                     required: true,
-                    ranglength: [6, 18]
+                    rangelength: [2, 18]
                 },
                 replypassword: {
                     required: true,
-                    ranglength: [6, 18],
+                    rangelength: [2, 18],
                     equalTo: "#newpassword"
                 }
             },
@@ -121,11 +118,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     equalTo: "两次密码不一致"
                 }
             },
-            submitHandler: function (form) {
-                var password = $("#newpassword".var());
+            submitHandler:function (form) {
+
+                var password = $("#newpassword").val();
                 $.post("/user/password", {"password": password}).done(function (data) {
                     if (data == "success") {
-                        alert("密码修改成功，点击重新登录"),
+                        alert("密码修改成功，点击重新登录");
                                 window.location.href = "/";
                     }
                 }).fail(function () {
@@ -133,7 +131,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 })
 
             }
-
+        });
+        $("#saveBtn").click(function(){
+             $("#changePasswordForm").submit();
         });
     });
 

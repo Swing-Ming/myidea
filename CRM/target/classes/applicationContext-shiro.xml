@@ -26,7 +26,7 @@
 
     </bean>
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-        <property name="realm" ref="shiroRealname"/>
+        <property name="realm" ref="shiroRealm"/>
         <property name="cacheManager" ref="cacheManager"/>
     </bean>
     <bean id="cacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager"/>

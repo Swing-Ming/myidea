@@ -1,25 +1,25 @@
 package com.kaishengit.pojo;
 
 import java.io.Serializable;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class User implements Serializable {
     private Integer id;
     private String username;
     private String password;
-    private Timestamp createTime;
-    private String wenxin;
+    private Timestamp createtime;
+    private String weixin;
     private String realname;
     private Boolean enable;
     private Integer roleid;
     private Role role;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -38,20 +38,20 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public Timestamp getCreateTime() {
-        return createTime;
+    public Timestamp getCreatetime() {
+        return createtime;
     }
 
-    public void setCreateTime(Timestamp createTime) {
-        this.createTime = createTime;
+    public void setCreatetime(Timestamp createtime) {
+        this.createtime = createtime;
     }
 
-    public String getWenxin() {
-        return wenxin;
+    public String getWeixin() {
+        return weixin;
     }
 
-    public void setWenxin(String wenxin) {
-        this.wenxin = wenxin;
+    public void setWeixin(String weixin) {
+        this.weixin = weixin;
     }
 
     public String getRealname() {
@@ -93,8 +93,8 @@ public class User implements Serializable {
                 ", id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", createTime=" + createTime +
-                ", wenxin='" + wenxin + '\'' +
+                ", createTime=" + createtime +
+                ", wenxin='" + weixin + '\'' +
                 ", realname='" + realname + '\'' +
                 ", enable=" + enable +
                 '}';

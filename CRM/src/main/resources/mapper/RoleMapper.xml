@@ -4,9 +4,14 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace类似于类的完全限定名-->
 <mapper namespace="com.kaishengit.mapper.RoleMapper">
+    <cache/>
 
     <select id="findById" resultType="Role">
         select * from t_role WHERE id = #{id} ;
+    </select>
+
+    <select id="findAll" resultType="Role">
+        SELECT * from t_role
     </select>
 
 

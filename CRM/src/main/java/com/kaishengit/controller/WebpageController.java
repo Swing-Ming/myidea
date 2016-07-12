@@ -2,6 +2,7 @@ package com.kaishengit.controller;
 
 import com.kaishengit.dto.FlashMessage;
 import com.kaishengit.service.UserService;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -35,7 +36,7 @@ public class WebpageController {
             subject.logout();
         }
         try {
-            UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, password);
+            UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, DigestUtils.md5Hex(password));
             subject.login(usernamePasswordToken);
             return "redirect:/home";
         }catch (AuthenticationException e){

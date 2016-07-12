@@ -26,7 +26,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#">员工管理</a></li>
+                    <li><a href="/admin/user">员工管理</a></li>
                     <li><a href="#">系统设置</a></li>
                 </ul>
             </li>

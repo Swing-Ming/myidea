@@ -14,7 +14,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named
-public class ShiroRealname extends AuthorizingRealm{
+public class ShiroRealm extends AuthorizingRealm{
 
     @Inject
     private UserMapper userMapper;
