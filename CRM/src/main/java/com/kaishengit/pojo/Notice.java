@@ -1,8 +1,9 @@
 package com.kaishengit.pojo;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class Notice {
+public class Notice implements Serializable{
 
     private Integer id;
     private String title;

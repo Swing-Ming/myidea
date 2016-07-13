@@ -71,7 +71,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script>
         $(function(){
             var edit = new Simditor({
-                textarea:$("#context")
+                textarea:$("#context"),
+                placeholder: '请输入公告内容',
+                upload:{
+                    url:"/notice/img/upload",
+                    fileKey:"file"
+                }
             });
 
 

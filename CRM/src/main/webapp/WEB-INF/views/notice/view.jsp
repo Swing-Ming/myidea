@@ -30,7 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content-wrapper">
         <section class="content-header">
             <h1>　　</h1>
-            <ol class="breadcrumb">
+                <ol class="breadcrumb">
                 <li><a href="/notice"><i class="fa fa-dashboard"></i> 公告列表</a></li>
                 <li class="active">${notice.title} </li>
             </ol>
