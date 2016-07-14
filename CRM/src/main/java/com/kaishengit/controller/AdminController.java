@@ -54,7 +54,7 @@ public class AdminController {
         Long count = userService.findUserCount();
         Long filterCount = userService.findUserCountByParam(params);
 
-        DataTableResult <User> dataTableResult = new DataTableResult<>(draw,userList,count,filterCount);
+        DataTableResult <User> dataTableResult = new DataTableResult<>(draw,count,filterCount,userList);
         return dataTableResult;
     }
 

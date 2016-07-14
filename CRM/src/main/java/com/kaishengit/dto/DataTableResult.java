@@ -6,14 +6,15 @@ public class DataTableResult<T> {
 
     private String draw;
     private List<T> data;
-    private Long recodesTotle;
-    private Long recodesFiltered;
+    private Long recordsTotal;
+    private Long recordsFiltered;
 
-    public DataTableResult(String draw, List<T> data, Long recodesTotle, Long recodesFiltered) {
+
+    public DataTableResult(String draw, Long recordsTotal, Long recordsFiltered , List<T> data) {
         this.draw = draw;
         this.data = data;
-        this.recodesTotle = recodesTotle;
-        this.recodesFiltered = recodesFiltered;
+        this.recordsTotal = recordsTotal;
+        this.recordsFiltered = recordsFiltered;
     }
 
     public String getDraw() {
@@ -32,19 +33,19 @@ public class DataTableResult<T> {
         this.data = data;
     }
 
-    public Long getRecodesTotle() {
-        return recodesTotle;
+    public Long getRecordsTotal() {
+        return recordsTotal;
     }
 
-    public void setRecodesTotle(Long recodesTotle) {
-        this.recodesTotle = recodesTotle;
+    public void setRecordsTotal(Long recordsTotal) {
+        this.recordsTotal = recordsTotal;
     }
 
-    public Long getRecodesFiltered() {
-        return recodesFiltered;
+    public Long getRecordsFiltered() {
+        return recordsFiltered;
     }
 
-    public void setRecodesFiltered(Long recodesFiltered) {
-        this.recodesFiltered = recodesFiltered;
+    public void setRecordsFiltered(Long recordsFiltered) {
+        this.recordsFiltered = recordsFiltered;
     }
 }

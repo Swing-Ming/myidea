@@ -16,7 +16,7 @@ public class NoticeService {
     private NoticeMapper noticeMapper;
 
     public void saveNotice(Notice notice) {
-        notice.setUser(ShiroUtil.getCurrentUserID());
+        notice.setUserid(ShiroUtil.getCurrentUserID());
         notice.setRealname(ShiroUtil.getCurrentUserRealname());
         noticeMapper.saveNotice(notice);
     }

@@ -3,8 +3,7 @@ package com.kaishengit.pojo;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class Document implements Serializable{
-
+public class Document implements Serializable {
     public static final String TYPE_DIR = "dir";
     public static final String TYPE_DOC="doc";
 
@@ -98,4 +97,5 @@ public class Document implements Serializable{
     public void setContentype(String contentype) {
         this.contentype = contentype;
     }
+
 }

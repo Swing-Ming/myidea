@@ -9,7 +9,7 @@ public class Notice implements Serializable{
     private String title;
     private String content;
     private Timestamp createtime;
-    private Integer user;
+    private Integer userid;
     private String realname;
 
     public Integer getId() {
@@ -44,12 +44,12 @@ public class Notice implements Serializable{
         this.createtime = createtime;
     }
 
-    public Integer getUser() {
-        return user;
+    public Integer getUserid() {
+        return userid;
     }
 
-    public void setUser(Integer user) {
-        this.user = user;
+    public void setUserid(Integer userid) {
+        this.userid = userid;
     }
 
     public String getRealname() {

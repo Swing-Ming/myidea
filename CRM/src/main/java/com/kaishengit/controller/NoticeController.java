@@ -72,7 +72,7 @@ public class NoticeController {
 
         List<Notice> noticeList = noticeService.findNoticeByParam(param);
         Long count = noticeService.count();
-        return new DataTableResult(draw,noticeList,count,count);
+        return new DataTableResult(draw,count,count,noticeList);
     }
 
     @RequestMapping(value = "/{id:\\d+}",method = RequestMethod.GET)
