@@ -19,6 +19,7 @@
         <property name="filterChainDefinitions">
             <value>
                 /static/** = anon
+                /notice/new = roles[经理]
                 /admin/** = roles[管理员]
                 /** =authc
             </value>

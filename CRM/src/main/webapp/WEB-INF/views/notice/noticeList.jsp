@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     <!-- jQuery 2.2.3 -->
-   <script src="/static/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="/static/plugins/jQuery/jquery-2.2.3.min.js"></script>
     <!-- Bootstrap 3.3.6 -->
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
@@ -74,37 +74,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
         $(function () {
 
             var dataTable = $("#noticeTable").DataTable({
-
+                searching:false,
                 serverSide: true,
                 ajax: "/notice/load",
+                ordering:false,
+                "autoWidth":false,
                 columns: [
-                    {
-                        "data": function (row) {
+                    {"data": function (row) {
                             return "<a href ='/notice/" + row.id + "'>" + row.title + "</a>"
-                        }
-                    },
-
-                    {
-                        "data": "createtime"
-                    },
+                    }},
+                    {"data":function(row){
+                            var day = moment(row.createtime).format("YYYY-MM-DD HH:mm");
+                            return day;
+                    }},
                     {"data": "realname"}
                 ],
-                "language":{ //定义中文
-                    "search": "请输入书籍名称:",
-                    "zeroRecords":    "没有匹配的数据",
-                    "lengthMenu":     "显示 _MENU_ 条数据",
-                    "info":           "显示从 _START_ 到 _END_ 条数据 共 _TOTAL_ 条数据",
-                    "infoFiltered":   "(从 _MAX_ 条数据中过滤得来)",
-                    "loadingRecords": "加载中...",
-                    "processing":     "处理中...",
-                    "paginate": {
-                        "first":      "首页",
-                        "last":       "末页",
-                        "next":       "下一页",
-                        "previous":   "上一页"
-                    }
-                }
-                /*"language": { //定义中文
+                "language": { //定义中文
                     "search": "请输入书籍名称:",
                     "zeroRecords": "没有匹配的数据",
                     "lengthMenu": "显示 _MENU_ 条数据",
@@ -118,7 +103,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         "next": "下一页",
                         "previous": "上一页"
                     }
-                }*/
+                }
 
 
             });

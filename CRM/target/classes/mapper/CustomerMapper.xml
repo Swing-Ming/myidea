@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace类似于类的完全限定名-->
+<mapper namespace="com.kaishengit.mapper.CustomerMapper">
+    <insert id="saveCustomer">
+        INSERT  INTO  t_customer (name, tel, weixin, address, email, userid, pinyin, companyid, companyname, level, type)
+        VALUES (#{name},#{tel},#{weixin},#{address},#{email},#{userid},#{pinyin},#{companyid},#{companyname},#{level},#{type})
+    </insert>
+
+    <select id="findByParam" resultType="Customer">
+        SELECT * FROM t_customer
+        <where>
+            <if test="userid != null and userid != ''">
+                (userid = #(userid) or (userid = '' or userid = null))
+            </if>
+            <if test="keyword != null and keyword != ''">
+                and (name like concat('%',#{keyword},'%') or pinyin like concat('%',#{keyword},'%') or tel like concat('%',#{keyword},'%'))
+            </if>
+        </where>
+        order by id desc
+        limit ${start},${length}
+    </select>
+
+    <select id="countByParam" resultType="Long">
+        SELECT count(*) FROM t_customer
+        <where>
+            <if test="userid != null and userid != ''">
+                (userid = #(userid) or (userid = '' or userid = null))
+            </if>
+            <if test="keyword != null and keyword != ''">
+                and (name like concat('%',#{keyword},'%') or pinyin like concat('%',#{keyword},'%') or tel like concat('%',#{keyword},'%'))
+            </if>
+        </where>
+    </select>
+    <select id="count" resultType="Long">
+        SELECT count(*) FROM t_customer
+    </select>
+    <select id="findAllCompany" resultType="com.kaishengit.pojo.Customer">
+        SELECT * FROM  t_customer
+    </select>
+
+
+</mapper>
