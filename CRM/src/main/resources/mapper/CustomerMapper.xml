@@ -5,18 +5,27 @@
 <!--namespace类似于类的完全限定名-->
 <mapper namespace="com.kaishengit.mapper.CustomerMapper">
     <insert id="saveCustomer">
-        INSERT  INTO  t_customer (name, tel, weixin, address, email, userid, pinyin, companyid, companyname, level, type)
+        INSERT  INTO  t_customer (name, tel, weixin, address, email, userid, pinyin, companyid, companyname,level,type)
         VALUES (#{name},#{tel},#{weixin},#{address},#{email},#{userid},#{pinyin},#{companyid},#{companyname},#{level},#{type})
     </insert>
+
+    <update id="updateCusomer">
+        UPDATE t_customer SET name = #{name}, tel = #{tel}, weixin = #{weixin}, address =#{address}, email = #{email}, userid = #{userid}, pinyin = #{pinyin}, companyid=#{companyid}, companyname=#{companyname},level=#{level},type=#{type}
+        where id = #{id}
+
+    </update>
+    <delete id="del">
+        DELETE FROM  t_customer where id = #{id}
+    </delete>
 
     <select id="findByParam" resultType="Customer">
         SELECT * FROM t_customer
         <where>
             <if test="userid != null and userid != ''">
-                (userid = #(userid) or (userid = '' or userid = null))
+                (userid = #{userid} or (userid = '' or userid = null))
             </if>
             <if test="keyword != null and keyword != ''">
-                and (name like concat('%',#{keyword},'%') or pinyin like concat('%',#{keyword},'%') or tel like concat('%',#{keyword},'%'))
+                and name like concat('%',#{keyword},'%') or pinyin like concat('%',#{keyword},'%') or tel like concat('%',#{keyword},'%')
             </if>
         </where>
         order by id desc
@@ -27,10 +36,10 @@
         SELECT count(*) FROM t_customer
         <where>
             <if test="userid != null and userid != ''">
-                (userid = #(userid) or (userid = '' or userid = null))
+                userid = #{userid} or (userid = '' or userid = null)
             </if>
             <if test="keyword != null and keyword != ''">
-                and (name like concat('%',#{keyword},'%') or pinyin like concat('%',#{keyword},'%') or tel like concat('%',#{keyword},'%'))
+                and name like concat('%',#{keyword},'%') or pinyin like concat('%',#{keyword},'%') or tel like concat('%',#{keyword},'%')
             </if>
         </where>
     </select>
@@ -38,7 +47,19 @@
         SELECT count(*) FROM t_customer
     </select>
     <select id="findAllCompany" resultType="com.kaishengit.pojo.Customer">
-        SELECT * FROM  t_customer
+        SELECT * FROM  t_customer WHERE type = #{type}
+    </select>
+    <select id="findByCompanyId" resultType="com.kaishengit.pojo.Customer">
+        SELECT * FROM t_customer WHERE id = #{companyid}
+    </select>
+    <select id="findById" resultType="com.kaishengit.pojo.Customer">
+        select * from t_customer WHERE  id = #{id}
+    </select>
+    <select id="findByType" resultType="com.kaishengit.pojo.Customer">
+        SELECT  * from t_customer WHERE type =#{type}
+    </select>
+    <select id="findCustomerByCompanyId" resultType="com.kaishengit.pojo.Customer">
+        select * from t_customer where companyid = #{id};
     </select>
 
 

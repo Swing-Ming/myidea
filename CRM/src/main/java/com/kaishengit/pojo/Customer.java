@@ -1,6 +1,7 @@
 package com.kaishengit.pojo;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 public class Customer {
 
@@ -17,7 +18,7 @@ public class Customer {
     private String pinyin;
     private String companyname;
     private Integer companyid;
-    private String leval;
+    private String level;
     private String type;
     private String email;
 
@@ -101,12 +102,12 @@ public class Customer {
         this.companyid = companyid;
     }
 
-    public String getLeval() {
-        return leval;
+    public String getLevel() {
+        return level;
     }
 
-    public void setLeval(String leval) {
-        this.leval = leval;
+    public void setLevel(String level) {
+        this.level = level;
     }
 
     public String getType() {
@@ -124,4 +125,5 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }

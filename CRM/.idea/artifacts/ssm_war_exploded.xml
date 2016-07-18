@@ -47,6 +47,7 @@
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
+          <element id="library" level="project" name="Maven: com.belerweb:pinyin4j:2.5.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

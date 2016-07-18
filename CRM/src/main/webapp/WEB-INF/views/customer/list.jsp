@@ -86,6 +86,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                             <div class="form-group">
                                 <label>客户等级</label>
+
                                 <select name="level" class="form-control">
                                     <option value=""></option>
                                     <option value="★">★</option>
@@ -94,6 +95,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <option value="★★★★">★★★★</option>
                                     <option value="★★★★★">★★★★★</option>
                                 </select>
+
                             </div>
                             <div class="form-group">
                                 <label>微信号</label>
@@ -117,6 +119,67 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                         <button type="button" id="saveBtn" class="btn btn-primary">保存</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div>
+
+    <div class="modal fade" id="editModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">编辑客户</h4>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" name="userid" id="edit_userid">
+                            <input type="hidden" name="id" id="edit_id">
+                            <input type="hidden" name="type" id="edit_type">
+                            <div class="form-group">
+                                <label>客户名称</label>
+                                <input type="text" class="form-control" name="name" id="edit_name">
+                            </div>
+                            <div class="form-group">
+                                <label>联系电话</label>
+                                <input type="text" class="form-control" name="tel" id="edit_tel">
+                            </div>
+                            <div class="form-group">
+                                <label>客户等级</label>
+
+                                <select name="level" class="form-control" id="edit_level">
+                                    <option value=""></option>
+                                    <option value="★">★</option>
+                                    <option value="★★">★★</option>
+                                    <option value="★★★">★★★</option>
+                                    <option value="★★★★">★★★★</option>
+                                    <option value="★★★★★">★★★★★</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group">
+                                <label>微信号</label>
+                                <input type="text" class="form-control" name="weixin" id="edit_weixin">
+                            </div>
+                            <div class="form-group">
+                                <label>电子邮件</label>
+                                <input type="text" class="form-control" name="email" id="edit_email">
+                            </div>
+                            <div class="form-group">
+                                <label>地址</label>
+                                <input type="text" class="form-control" name="address" id="edit_address">
+                            </div>
+                            <div class="form-group" id="editList">
+                                <label>所属公司</label>
+                                <select name="companyid" class="form-control"></select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" id="editBtn" class="btn btn-primary">保存</button>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -236,12 +299,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     if (data && data.length) {
                         for (var i = 0; i < data.length; i++) {
                             var company = data[i];
-                            var option = "<option value = '" + company.id + "'>" + company.companyname + "</option>"
+                            var option = "<option value = '" + company.id + "'>" + company.name + "</option>"
                             $select.append(option);
                         }
                     }
-
-
                 }).fail(function () {
                     alert("服务器异常");
                 });
@@ -254,10 +315,124 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     keyboard: false
                 });
 
+                $("#companyList").show();
+                $("#radioperson").click(function () {
+                    if ($(this)[0].checked) {
+                        $("#companyList").show();
+                    }
+
+                });
+                $("#radiocompany").click(function () {
+                    if ($(this)[0].checked) {
+                        $("#companyList").hide();
+                    }
+                });
+
             });
             $("#saveBtn").click(function () {
                 $("#newForm").submit();
             });
+
+            //编辑客户
+            $("#editForm").validate({
+                        errorClass: "text-danger",
+                        errorElement: "span",
+                        rules: {
+                            name: {
+                                required: true
+                            },
+                            tel: {
+                                required: true
+                            }
+                        },
+                        messages: {
+                            name: {
+                                required: "请输入客户名称"
+                            },
+                            tel: {
+                                required: "请输入联系电话"
+                            }
+                        },
+                        submitHandler: function (form) {
+                            $.post("/customer/edit", $(form).serialize()).done(function (data) {
+                                if (data == "success") {
+                                    $("#editModal").modal('hide');
+                                    dataTable.ajax.reload();
+                                }
+
+                            }).fail(function () {
+                                alert("服务器异常");
+                            });
+
+                        }
+                    }
+            );
+            $(document).delegate(".editLink", "click", function () {
+                var id = $(this).attr("rel");
+                var $select = $("#editList select");
+                $select.html("");
+                $select.append("<option></option>");
+                //通过ajax 请求id获取customer对象及公司列表
+                $.get("/customer/edit/" + id + ".json").done(function (data) {
+                    if (data.state == "success") {
+                        if (data.companyList && data.companyList.length) {
+                            for (var i = 0; i < data.companyList.length; i++) {
+                                var company = data.companyList[i];
+                                $select.append("<option value='" + company.id + "'>" + company.name + "</option>");
+                            }
+                        }
+                    }
+
+                    //将数据写入表单
+                    var customer = data.customer;
+                    if (customer.type == "company") {
+                        $("#editList").hide();
+                    } else {
+                        $("#editList").show();
+                    }
+                    $("#edit_userid").val(customer.userid);
+                    $("#edit_id").val(customer.id);
+                    $("#edit_type").val(customer.type);
+                    $("#edit_weixin").val(customer.weixin);
+                    $("#edit_email").val(customer.email);
+                    $("#edit_address").val(customer.address);
+                    $("#edit_level").val(customer.level);
+                    $("#edit_name").val(customer.name);
+                    $("#edit_tel").val(customer.tel);
+                    $select.val(customer.companyid);
+
+                    $("#editModal").modal({
+                        show: true,
+                        backdrop: 'static',
+                        keyboard: false
+                    });
+                }).fail(function () {
+                    alert("服务器异常");
+                });
+                $("#editBtn").click(function () {
+                    $("#editForm").submit();
+                });
+
+            });
+            //删除用户
+            $(document).delegate(".delLink", "click", function () {
+                if (confirm("确定要删除么？")) {
+                    var id = $(this).attr("rel");
+                    $.get("/customer/del/" + id).done(function (data) {
+                        if (data == "success") {
+                            dataTable.ajax.reload();
+                        }
+
+                    }).fail(function () {
+                        alert("服务器异常");
+
+                    });
+                }
+
+
+            });
+
+
         });
 
     </script>

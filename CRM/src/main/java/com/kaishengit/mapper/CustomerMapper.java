@@ -2,6 +2,7 @@ package com.kaishengit.mapper;
 
 import com.kaishengit.pojo.Customer;
 
+import javax.inject.Inject;
 import java.util.List;
 import java.util.Map;
 
@@ -14,5 +15,19 @@ public interface CustomerMapper {
 
     void saveCustomer(Customer customer);
 
-    List<Customer> findAllCompany();
+
+
+    Customer  findByCompanyId(Integer id);
+
+    List<Customer> findAllCompany(String customerTypeCompany);
+
+    Customer findById(Integer id);
+
+    void updateCusomer(Customer customer);
+
+    List<Customer> findByType(String type);
+
+    List<Customer> findCustomerByCompanyId(Integer id);
+
+    void del(Integer id);
 }

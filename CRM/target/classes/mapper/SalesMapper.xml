@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace类似于类的完全限定名-->
+<mapper namespace="com.kaishengit.mapper.SalesMapper">
+
+
+    <select id="findByParam" resultType="com.kaishengit.pojo.Sales">
+        select * FROM  t_sales
+        <where>
+            <if test="userid != null and userid != ''">
+                userid = #{userid}
+            </if>
+            <if test="name != null and name != ''">
+                and name like concat('%',#{name},'%')
+            </if>
+            <if test="progress != null and progress != ''">
+                and progress like concat('%',#{progress},'%')
+            </if>
+            <if test="startdate != null and startdate != ''">
+                and date(lastime) >= #{startdate}
+            </if>
+            <if test="enddate != null and enddate != ''">
+                and date(lastime) &lt; = #{enddate}
+            </if>
+        </where>
+        order by desc
+        limit ${start},${length}
+    </select>
+
+    <select id="countByParam" resultType="Long">
+        selcet COUNT(*) where
+        <where>
+            <if test="userid != null and userid != ''">
+                userid = #{userid}
+            </if>
+            <if test="name != null and name != ''">
+                and name like concat('%',#{name},'%')
+            </if>
+            <if test="progress != null and progress != ''">
+                and progress like concat('%',#{progress},'%')
+            </if>
+            <if test="startdate != null and startdate != ''">
+                and date(lastime) >= #{startdate}
+            </if>
+            <if test="enddate != null and enddate != ''">
+                and date(lastime) &lt; = #{enddate}
+            </if>
+        </where>
+
+    </select>
+</mapper>

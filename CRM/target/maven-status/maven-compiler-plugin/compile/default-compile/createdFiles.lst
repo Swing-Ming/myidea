@@ -2,13 +2,16 @@ com\kaishengit\util\Test.class
 com\kaishengit\mapper\RoleMapper.class
 com\kaishengit\util\Page.class
 com\kaishengit\service\UserService.class
+com\kaishengit\mapper\SalesMapper.class
 com\kaishengit\mapper\NoticeMapper.class
 com\kaishengit\dto\FlashMessage.class
+com\kaishengit\service\SalesService.class
 com\kaishengit\mapper\UserMapper.class
 com\kaishengit\exception\NotFoundException.class
 com\kaishengit\dto\JsonResult.class
 com\kaishengit\controller\AdminController.class
 com\kaishengit\mapper\UserLogMapper.class
+com\kaishengit\pojo\Sales.class
 com\kaishengit\controller\DocumentController.class
 com\kaishengit\pojo\User.class
 com\kaishengit\pojo\Notice.class
@@ -19,6 +22,7 @@ com\kaishengit\pojo\Role.class
 com\kaishengit\util\ShiroUtil.class
 com\kaishengit\pojo\UserLog.class
 com\kaishengit\pojo\Document.class
+com\kaishengit\controller\SalesController.class
 com\kaishengit\controller\CustomerController.class
 com\kaishengit\service\ShiroRealm.class
 com\kaishengit\controller\NoticeController.class
