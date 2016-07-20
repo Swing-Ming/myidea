@@ -1,7 +1,9 @@
 package com.kaishengit.service;
 
 import com.google.common.collect.Maps;
+import com.kaishengit.mapper.CustomerMapper;
 import com.kaishengit.mapper.SalesMapper;
+import com.kaishengit.pojo.Customer;
 import com.kaishengit.pojo.Sales;
 import com.kaishengit.util.ShiroUtil;
 
@@ -15,6 +17,8 @@ public class SalesService {
 
     @Inject
     private SalesMapper salesMapper;
+    @Inject
+    private CustomerMapper customerMapper;
 
     public List<Sales> findByParam(Map<String, Object> params) {
         if(ShiroUtil.isEmployee()){
@@ -37,5 +41,12 @@ public class SalesService {
             params.put("userid", ShiroUtil.getCurrentUserID());
         }
         return salesMapper.countByParam(params);
+    }
+
+    public void addSales(Sales sales) {
+        sales.setUserid(ShiroUtil.getCurrentUserID());
+        sales.setCustname(customerMapper.findById(sales.getCustid()).getName());
+       sales.setUsername(ShiroUtil.getCurrentUserRealname());
+        salesMapper.saveSales(sales);
     }
 }

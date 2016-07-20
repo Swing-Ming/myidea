@@ -1,6 +1,7 @@
 package com.kaishengit.mapper;
 
 import com.kaishengit.pojo.Customer;
+import org.apache.ibatis.annotations.Param;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -30,4 +31,9 @@ public interface CustomerMapper {
     List<Customer> findCustomerByCompanyId(Integer id);
 
     void del(Integer id);
+
+    Long finCustomerByTime(@Param("start") String start, @Param("end")String end);
+
+    List<Customer> findALLCust();
+
 }

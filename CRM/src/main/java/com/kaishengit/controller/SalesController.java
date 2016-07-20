@@ -3,9 +3,11 @@ package com.kaishengit.controller;
 import com.google.common.collect.Maps;
 import com.kaishengit.dto.DataTableResult;
 import com.kaishengit.pojo.Sales;
+import com.kaishengit.service.CustomerService;
 import com.kaishengit.service.SalesService;
 import com.kaishengit.util.Strings;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,10 +23,12 @@ public class SalesController {
 
     @Inject
     private SalesService salesService;
+    @Inject
+    private CustomerService customerService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String list() {
-
+    public String list(Model model) {
+            model.addAttribute("custList",customerService.findAllCust());
         return "/sales/list";
 
     }
@@ -57,5 +61,14 @@ public class SalesController {
         Long count = salesService.count();
 
         return  new DataTableResult<>(draw,count,countParam,salesList);
+    }
+
+    @RequestMapping(value = "/newsales" ,method = RequestMethod.POST)
+    @ResponseBody
+    public String addSales(Sales sales){
+
+        salesService.addSales(sales);
+
+        return "success";
     }
 }

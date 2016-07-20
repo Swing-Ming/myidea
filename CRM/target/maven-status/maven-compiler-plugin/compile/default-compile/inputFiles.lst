@@ -1,6 +1,8 @@
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\dto\DataTableResult.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\mapper\UserLogMapper.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\dto\FlashMessage.java
+E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\controller\TaskController.java
+E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\service\ChartService.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\service\DocumentService.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\dto\JsonResult.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\service\ShiroRealm.java
@@ -10,8 +12,10 @@ E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\controller\DocumentController.
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\controller\UserController.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\pojo\Customer.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\controller\WebpageController.java
+E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\controller\ChartController.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\mapper\UserMapper.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\mapper\NoticeMapper.java
+E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\pojo\Task.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\mapper\DocumentMapper.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\exception\NotFoundException.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\util\Test.java
@@ -19,8 +23,10 @@ E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\pojo\Role.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\controller\AdminController.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\util\Page.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\pojo\Notice.java
+E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\mapper\TaskMapper.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\mapper\RoleMapper.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\controller\NoticeController.java
+E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\service\TaskService.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\service\NoticeService.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\service\CustomerService.java
 E:\ideaWorkSpace\CRM\src\main\java\com\kaishengit\mapper\SalesMapper.java

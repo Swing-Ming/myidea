@@ -4,6 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace类似于类的完全限定名-->
 <mapper namespace="com.kaishengit.mapper.SalesMapper">
+    <insert id="saveSales">
+        INSERT INTO t_sales(name, price, custid, custname, progress, lastime, userid, username, successtime)
+        VALUES (#{name},#{price},#{custid},#{custname},#{progress},#{lastime},#{userid},#{username},#{successtime})
+    </insert>
 
 
     <select id="findByParam" resultType="com.kaishengit.pojo.Sales">
@@ -25,12 +29,12 @@
                 and date(lastime) &lt; = #{enddate}
             </if>
         </where>
-        order by desc
+        order by id desc
         limit ${start},${length}
     </select>
 
     <select id="countByParam" resultType="Long">
-        selcet COUNT(*) where
+        SELECT COUNT(*)
         <where>
             <if test="userid != null and userid != ''">
                 userid = #{userid}
@@ -49,5 +53,24 @@
             </if>
         </where>
 
+    </select>
+    <select id="countMoneyByTime" resultType="java.lang.Long">
+        SELECT  sum(price) FROM t_sales WHERE date(createtime) >= #{start} and date(successtime) &lt;= #{end} and progress = #{state}
+    </select>
+    <select id="findStateCount" resultType="java.lang.Long">
+        SELECT sum(progress) FROM t_sales WHERE  date(createtime) >= #{start} and date(successtime) &lt;= #{end} and progress = #{state}
+    </select>
+    <select id="findAllByTime" resultType="java.util.Map">
+        SELECT user.realname (IFNULL(sum(price),0) FROM t_sales WHERE userid = user.id AND
+        date(createtime)>= #{start} and date(successtime) &lt;= #{end}) as price
+        from (SELECT id,realname FROM t_sales)as user
+    </select>
+    <select id="findProgress" resultType="java.util.Map">
+     SELECT  temp.custtype as 'name',(SELECT count(*) FROM t_sales WHERE sales.progress = temp.custtype and date(createtime) >= #{start} and date(successtime) &lt;= #{end}) as value
+        from (select '初次接触' as ''custtype
+         UNION SELECT '确认意向'
+        UNION SELECT '提供合同'
+        UNION SELECT '完成交易'
+        UNION SELECT '交易搁置') as temp
     </select>
 </mapper>

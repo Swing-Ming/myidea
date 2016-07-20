@@ -32,7 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content-wrapper">
         <%--搜索--%>
         <section class="content">
-            <section class="content">
+            <%--<section class="content">
                 <div class="box box-default collapsed-box">
                     <div class="box-header with-border">
                         <h3 class="box-title">搜索</h3>
@@ -57,7 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <button type="button" id="search_Btn" class="btn btn-default"><i class="fa fa-search"></i> 搜索</button>
                         </form>
                     </div>
-                </div>
+                </div>--%>
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">机会列表</h3>
@@ -103,14 +103,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="form-group">
                                 <label>关联客户</label>
                                 <select name="custid" class="form-control">
-                                    <c:forEach items="${custidList}" var="cust">
+                                    <c:forEach items="${custList}" var="cust">
+                                            <option></option>
                                         <option value="${cust.id}">${cust.name}</option>
                                     </c:forEach>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>当前进度</label>
-                                <select name="progess" class="form-control">
+                                <select name="progress" class="form-control">
                                     <option value="初次接触">初次接触</option>
                                     <option value="确认意向">确认意向</option>
                                     <option value="提供合同">提供合同</option>
@@ -146,6 +147,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         var dataTable = $("#datatTable").DataTable({
             serverSide:true,
             searching:false,
+            "autoWidth":false,
+            ordering:false,
             ajax:"sales/load",
             columns:[
                 {"data":function(row){
@@ -169,8 +172,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 {"data":"lastime"},
                 {"data":"username"}
             ],
-            "autoWidth":false,
-            ordering:false,
+
             "language": { //定义中文
                 "search": "请输入书籍名称:",
                 "zeroRecords": "没有匹配的数据",
@@ -187,6 +189,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 }
             }
         });
+
+        $("#newBtn").click(function(){
+            $("#newModal").modal({
+                show:true,
+                backdrop:'static',
+                keyboard:false
+            });
+        });
+        //新增机会
+        //++++++++++++++Ajax请求
+        $("#saveBtn").click(function(){
+
+            $.post("/sales/newsales",$("#newForm").serialize()).done(function(data){
+                if(data == "success"){
+                    $("#newModal").modal('hide');
+                    dataTable.ajax.reload();
+                }
+
+            }).fail(function(){
+                alert("服务器异常");
+            });
+
+        });
+
     });
 </script>
 

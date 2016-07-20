@@ -87,4 +87,8 @@ public class CustomerService {
 
             return customerMapper.findCustomerByCompanyId(id);
     }
+
+    public List<Customer> findAllCust() {
+        return customerMapper.findALLCust();
+    }
 }
