@@ -32,7 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content-wrapper">
         <%--搜索--%>
         <section class="content">
-            <%--<section class="content">
+            <section class="content">
                 <div class="box box-default collapsed-box">
                     <div class="box-header with-border">
                         <h3 class="box-title">搜索</h3>
@@ -57,7 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <button type="button" id="search_Btn" class="btn btn-default"><i class="fa fa-search"></i> 搜索</button>
                         </form>
                     </div>
-                </div>--%>
+                </div>
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">机会列表</h3>
@@ -191,6 +191,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         });
 
         $("#newBtn").click(function(){
+            $("#newForm")[0].reset();
             $("#newModal").modal({
                 show:true,
                 backdrop:'static',
@@ -212,6 +213,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             });
 
         });
+        $("#newBtn").click(function(){
+            $("newForm").submit();
+        });
+
+        $("#search_Btn").click(function(){
+
+        });
+
+
 
     });
 </script>
