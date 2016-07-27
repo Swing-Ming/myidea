@@ -37,7 +37,7 @@ public class HibernateTestCase {
     public void testSelect(){
         Session session =  HibernateUtil.getSession();
         Transaction transaction = session.beginTransaction();
-        User user = (User) session.get(User.class,52);
+        User user = (User) session.get(User.class,38);
         System.out.println(user.toString());
         session.getTransaction().commit();
     }

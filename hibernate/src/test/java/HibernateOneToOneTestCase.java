@@ -15,14 +15,15 @@ public class HibernateOneToOneTestCase {
         session.beginTransaction();
 
         Person person = new Person();
-        person.setName("张三");
+        person.setName("赵武");
 
         Card card = new Card();
-        card.setCardname("vip-0000");
+        card.setCardname("vip-1111");
         card.setPerson(person);
 
-        session.save(card);
         session.save(person);
+        session.save(card);
+
 
         session.getTransaction().commit();
     }
@@ -33,8 +34,8 @@ public class HibernateOneToOneTestCase {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
 
-        Person person = (Person) session.get(Person.class, 12);
-        System.out.println(person.getName() + ":" + person.getCard().getCardname());
+        Person person = (Person) session.get(Person.class, 17);
+        System.out.println(person.getName() );
 
         session.getTransaction().commit();
     }

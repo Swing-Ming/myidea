@@ -1,5 +1,7 @@
 package com.kaishengit.pojo;
 
+
+
 public class Card {
     private Integer id;
     private String cardname;

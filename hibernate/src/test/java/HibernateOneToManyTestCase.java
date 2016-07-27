@@ -18,15 +18,15 @@ public class HibernateOneToManyTestCase {
 
 
         Dept dept = new Dept();
-        dept.setDeptname("H5");
+        dept.setDeptname("C++");
 
 
         Employee employee = new Employee();
-        employee.setEmpname("lili");
+        employee.setEmpname("赵曦");
         employee.setDept(dept);
 
         Employee employee1 = new Employee();
-        employee1.setEmpname("hary");
+        employee1.setEmpname("江流");
         employee1.setDept(dept);
 
         Set<Employee> employeeSet = new HashSet<Employee>();

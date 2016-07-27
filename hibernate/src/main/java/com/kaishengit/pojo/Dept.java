@@ -1,11 +1,17 @@
 package com.kaishengit.pojo;
 
+import javax.persistence.*;
 import java.util.Set;
 
+@Entity
+@Table(name="t_dept")
 public class Dept {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String deptname;
+
+    @OneToMany(mappedBy = "dept")
     private Set<Employee> employeeSet;
 
 
@@ -16,7 +22,6 @@ public class Dept {
     public void setEmployeeSet(Set<Employee> employeeSet) {
         this.employeeSet = employeeSet;
     }
-
     public Integer getId() {
         return id;
     }
